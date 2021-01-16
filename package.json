@@ -11,7 +11,7 @@
     "release": "ng build --prod && cd dist/story-blog/ && surge --project=./ --domain=https://anjali-mishra.surge.sh ",
     "dev:ssr": "ng run story-blog:serve-ssr",
     "serve:ssr": "node dist/story-blog/server/main.js",
-    "build:ssr": "rimraf -rf /dist/ && ng build --prod && ng run story-blog:server:production",
+    "build:ssr": "rimraf /dist && ng build --prod && ng run story-blog:server:production",
     "prerender": "ng run story-blog:prerender",
     "server": "node dist/story-blog/server/main.js"
   },
