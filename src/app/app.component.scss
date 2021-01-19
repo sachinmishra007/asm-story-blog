@@ -38,6 +38,9 @@
         font-size: 17px;
         font-weight: 600;
         cursor: pointer;
+        a {
+            color: white;
+        }
     }
 
     .menu-btn {
@@ -70,17 +73,52 @@
         width: 50%;
         position: relative;
         display: flex;
-        justify-content: center;
+        // justify-content: center;
+        flex-direction: column;
+        .subscription-email {
+            width: 100%;
+            text-align: center;
+            // text-align: center;
+            input {
+                background-color: transparent;
+                width: 80%;
+                padding: 15px;
+                border: 1px solid grey;
+                border-radius: 5px;
+                outline: none;
+                color: white;
+                font-family: "Noto Sans";
+                font-size: 15px;
+                margin-bottom: 20px;
+                font-weight: 600;
+                transition: all 0.3s ease;
+            }
+            input:focus {
+                background-color: white;
+                color: black;
+            }
+            ::placeholder {
+                color: white;
+            }
+            input:focus::placeholder {
+                // background-color: white;
+                color: black;
+            }
+            :-ms-input-placeholder {
+                color: white;
+            }
+        }
         .social-sites {
-            position: absolute;
+            margin-left: 20px;
             bottom: 20%;
             display: flex;
             flex-direction: row;
             justify-content: space-around;
             text-align: center;
-            width: 60%;
+            width: 70%;
             font-size: 22px;
             cursor: pointer;
+            padding-bottom: 21px;
             // transition: 300ms;
             i:hover {
                 transform: scale(1.5);
@@ -88,17 +126,19 @@
         }
     }
     .getting-started {
-        position: absolute;
         bottom: 1%;
-        width: 60%;
+        width: 35%;
         text-align: center;
         padding-top: 5px;
         padding-bottom: 5px;
         border: 1px solid white;
         cursor: pointer;
         font-size: 24px;
-        letter-spacing: 4px;
+        // letter-spacing: 4px;
         transition: all 0.3s ease;
+        margin-left: 60px;
+        background-color: #294c52;
+        color: white;
     }
     .getting-started:hover {
         font-weight: 700;
@@ -241,7 +281,7 @@
                 margin-right: 30px;
                 margin-bottom: 20px;
                 .blog-image {
-                    width: 100%;
+                    width: 50%;
                     height: 200px;
                     object-fit: fill;
                     // border-radius: 5px;
@@ -264,14 +304,15 @@
             .blog-timeframe {
                 margin: 5px 5px;
                 display: flex;
-                flex-direction: row;
-                justify-content: space-between;
+                flex-direction: column;
                 .time {
                     display: flex;
                     font-size: 12px;
                     letter-spacing: 1px;
                     color: #171e1c;
                     font-weight: 600;
+                    padding-top: 5px;
+                    padding-bottom: 5px;
                     i {
                         font-size: 13px;
                         margin-right: 5px;
@@ -287,18 +328,20 @@
                     margin-right: 5px;
                     cursor: pointer;
                 }
-            }
-            .blog-info {
-                display: flex;
-                justify-content: space-between;
                 .blog-date {
-                    margin-top: 15px;
-                    margin-right: 10px;
                     font-size: 12px;
                     font-weight: 700;
                     letter-spacing: 1px;
                     color: #333e3e;
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    width: 100%;
+                    color: #312121;
                 }
+            }
+            .blog-info {
+                display: flex;
+                justify-content: space-between;
             }
             .blog-summary {
                 padding-top: 5px;
@@ -450,6 +493,25 @@
     }
 }
 
+.video {
+    .max-width {
+        h2 {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .video-list {
+            display: flex;
+            flex-wrap: wrap;
+
+            iframe {
+                margin: 10px;
+                width: 370px;
+                height: 400px;
+            }
+        }
+    }
+}
+
 .copyright {
     background-color: #161617;
     color: white;
@@ -570,6 +632,19 @@
             }
         }
     }
+    .video {
+        .max-width {
+            h2 {
+                text-align: center;
+            }
+            padding: 0px;
+            .video-list {
+                iframe {
+                    width: 100%;
+                }
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -604,25 +679,34 @@
     }
 
     .home {
-        height: 100vh;
+        height: 120vh;
         .max-width {
             padding: 0 50px;
             margin-top: 80px;
             flex-direction: column-reverse;
             .left-content {
-                flex-direction: column;
                 width: 100%;
+                flex-direction: column;
                 .social-sites {
                     position: relative;
                     margin-top: 40px;
                     bottom: 0%;
                     width: 100%;
+                    margin-left: 0px;
+                }
+                .sub {
+                    .subscription-email {
+                        input {
+                            width: 100%;
+                        }
+                    }
                 }
                 .getting-started {
                     position: relative;
                     margin-top: 20px;
                     bottom: 0%;
                     width: 100%;
+                    margin-left: 0px;
                 }
             }
             .right-content {
@@ -640,7 +724,6 @@
                 text-align: justify;
                 padding-left: 54px;
                 padding-right: 54px;
-                
             }
             .tips-tricks {
                 font-size: 16px;
@@ -695,6 +778,19 @@
             }
         }
     }
+    .video {
+        .max-width {
+            h2 {
+                text-align: center;
+            }
+            padding: 0px;
+            .video-list {
+                iframe {
+                    width: 100%;
+                }
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -729,7 +825,7 @@
     }
 
     .home {
-        height: 110vh;
+        height: 130vh;
         .max-width {
             padding: 0 40px;
             margin-top: 100px;
@@ -742,12 +838,21 @@
                     margin-top: 40px;
                     bottom: 0%;
                     width: 100%;
+                    margin-left: 0px;
+                }
+                .sub {
+                    .subscription-email {
+                        input {
+                            width: 100%;
+                        }
+                    }
                 }
                 .getting-started {
                     position: relative;
                     margin-top: 20px;
                     bottom: 0%;
                     width: 100%;
+                    margin-left: 0px;
                 }
             }
             .right-content {
@@ -765,7 +870,6 @@
                 text-align: justify;
                 padding-left: 44px;
                 padding-right: 44px;
-                
             }
             .tips-tricks {
                 font-size: 16px;
@@ -820,6 +924,20 @@
             }
         }
     }
+
+    .video {
+        .max-width {
+            h2 {
+                text-align: center;
+            }
+            padding: 0px;
+            .video-list {
+                iframe {
+                    width: 100%;
+                }
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -854,7 +972,7 @@
     }
 
     .home {
-        height: 110vh;
+        height: 130vh;
         .max-width {
             padding: 0 20px;
             margin-top: 30%;
@@ -867,12 +985,21 @@
                     margin-top: 40px;
                     bottom: 0%;
                     width: 100%;
+                    margin-left: 0px;
+                }
+                .sub {
+                    .subscription-email {
+                        input {
+                            width: 100%;
+                        }
+                    }
                 }
                 .getting-started {
                     position: relative;
                     margin-top: 20px;
                     bottom: 0%;
                     width: 100%;
+                    margin-left: 0px;
                 }
             }
             .right-content {
@@ -944,6 +1071,19 @@
             }
         }
     }
+    .video {
+        .max-width {
+            h2 {
+                text-align: center;
+            }
+            padding: 0px;
+            .video-list {
+                iframe {
+                    width: 100%;
+                }
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 320px) {
@@ -988,12 +1128,21 @@
                     margin-top: 40px;
                     bottom: 0%;
                     width: 100%;
+                    margin-left: 0px;
+                }
+                .sub {
+                    .subscription-email {
+                        input {
+                            width: 100%;
+                        }
+                    }
                 }
                 .getting-started {
                     position: relative;
                     margin-top: 20px;
                     bottom: 0%;
                     width: 100%;
+                    margin-left: 0px;
                 }
             }
             .right-content {
@@ -1057,6 +1206,19 @@
                     .greeting {
                         text-align: center;
                     }
+                }
+            }
+        }
+    }
+    .video {
+        .max-width {
+            h2 {
+                text-align: center;
+            }
+            padding: 0px;
+            .video-list {
+                iframe {
+                    width: 100%;
                 }
             }
         }

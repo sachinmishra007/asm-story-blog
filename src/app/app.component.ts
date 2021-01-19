@@ -1,6 +1,9 @@
-import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Component, ComponentFactoryResolver, HostListener, OnInit, ViewChild } from '@angular/core';
 // import {  } from "aos";
 import * as AOS from 'aos';
+import { SocialShareComponent } from './component/social-share/social-share.component';
+import { ModalComponentComponent } from './component/modal-component/modal-component.component';
+import { ModalService } from './services/modal.service';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +12,12 @@ import * as AOS from 'aos';
 })
 export class AppComponent implements OnInit {
   storyBlogs = [] as any;
+  videoInfo = [] as any;
   @ViewChild('navbar') navbar: any;
-  constructor() {
+  constructor(
+    private _resolver: ComponentFactoryResolver,
+    private _modalSvc: ModalService
+  ) {
 
   }
 
@@ -81,7 +88,7 @@ export class AppComponent implements OnInit {
       },
       {
         id: 2,
-        blogImage: '../assets//mantu.png',
+        blogImage: '../assets//cover.png',
         isPopular: true,
         date: '30 जून 2020',
         time: '3 मिनट',
@@ -108,6 +115,8 @@ export class AppComponent implements OnInit {
       },
 
     ];
+
+
     AOS.init({
       duration: 500,
       easing: 'ease',
@@ -141,7 +150,16 @@ export class AppComponent implements OnInit {
       }
     }
   }
-  clickToView(item:any) {
+  clickToView(item: any) {
+
+  }
+  share() {
+
+    import(/*  webpackChunkName:'modal-dialog' */'../app/component/modal-component/modal-component.module').then((_resp) => {
+      const compRef = this._resolver.resolveComponentFactory(ModalComponentComponent);
+      const nativeElement = this._modalSvc.open('mod1', SocialShareComponent, compRef.componentType);
+
+    });
 
   }
 }

@@ -1,15 +1,15 @@
 <nav class="navbar" #navbar>
     <div class="max-width">
-        <div  data-aos="fade-right" class="logo">
+        <div data-aos="fade-right" class="logo">
             <a href="#">
                 हस्त<span>लेख.</span>
             </a>
         </div>
         <div class="nav-menu">
             <ul>
-                <li data-aos="fade-down"><a href="#blogs"></a>कहानियाँ</li>
-                <li data-aos="fade-down"><a href="#video"></a>चलचित्र</li>
-                <li data-aos="fade-down"><a href="#about"></a>परिचय</li>
+                <li data-aos="fade-down"><a href="#blogs">कहानियाँ</a></li>
+                <li data-aos="fade-down"><a href="#video">चलचित्र</a></li>
+                <li data-aos="fade-down"><a href="#about">परिचय</a></li>
             </ul>
         </div>
         <div (click)="example(element)" class="menu-btn" #element>
@@ -22,14 +22,20 @@
 
     <div class="max-width">
         <div class="left-content">
-            <div data-aos="fade-down"  class="social-sites">
+
+            <div data-aos="fade-down" class="social-sites">
                 <span (click)="clickOnIcon('youtube')"><i class="fab fa-youtube"></i></span>
                 <span (click)="clickOnIcon('')"><i class="fab fa-twitter"></i></span>
                 <span (click)="clickOnIcon('')"><i class="fab fa-facebook-f"></i></span>
                 <span (click)="clickOnIcon('')"><i class="fab fa-instagram"></i></span>
             </div>
-            <div data-aos="fade-up"  class="getting-started">
-                शुरू करे
+            <div class="sub">
+                <div class="subscription-email">
+                    <input type="text" placeholder="आपका ई-मेल पता">
+                </div>
+                <div data-aos="fade-up" class="getting-started">
+                    सदस्यता
+                </div>
             </div>
         </div>
 
@@ -41,11 +47,11 @@
                 <i class="fas fa-tags"></i>
                 सुविचार
             </div>
-            <div  data-aos="fade-down" class="main-description">
+            <div data-aos="fade-down" class="main-description">
                 खुद से जीतने की जिद है मुझे खुद को ही हराना है
                 मैं भीड़ नहीं हूँ दुनिया की, मेरे अंदर एक जमाना है
             </div>
-            <div  data-aos="fade-up" class="author-name">
+            <div data-aos="fade-up" class="author-name">
                 - अंजली सचिन मिश्रा
             </div>
         </div>
@@ -59,23 +65,24 @@
         <h2>कहानियाँ और कविताएँ</h2>
         <div class="blog-contents">
             <div class="blog-card" (click)="clickToView(item)" *ngFor="let item of storyBlogs;">
-                <img class="blog-image" [src]="item.blogImage" alt="blog-images">
                 <div class="popular" [hidden]="item.isPopular">
                     <i class="fas fa-fire"></i>
                     लोकप्रिय
                 </div>
 
-                <div class="blog-timeframe">
-                    <div class="time"><i class="far fa-clock"></i>{{item.time}}</div>
-                    <div class="time"><i class="far fa-thumbs-up"></i>
-                        <div class="story-type" *ngFor="let _type of item.type" [innerHTML]="_type"> </div>
+                <div style="display: flex;">
+                    <img class="blog-image" [src]="item.blogImage" alt="blog-images">
+                    <div class="blog-timeframe">
+
+                        <div class="time"><i class="far fa-clock"></i>{{item.time}}</div>
+                        <div class="time"><i class="far fa-thumbs-up"></i>
+                            <div class="story-type" *ngFor="let _type of item.type" [innerHTML]="_type"> </div>
+                        </div>
+                        <div class="blog-date" [innerHTML]="item.date">
+                        </div>
                     </div>
                 </div>
-                <div class="blog-info">
-                    <div class="blog-summary" [innerHTML]="item.summary">
-                    </div>
-                    <div class="blog-date" [innerHTML]="item.date">
-                    </div>
+                <div class="blog-summary" [innerHTML]="item.summary">
                 </div>
                 <div class="blog-description" [innerHTML]="item.description">
                 </div>
@@ -85,7 +92,7 @@
                         <div class="author-name" [innerHTML]="item.authorName"> </div>
                     </div>
                     <div class="share-info">
-                        <div class="share"><i class="fas fa-share"></i></div>
+                        <div class="share" (click)="share()" ><i class="fas fa-share"></i></div>
                         <div class="share"><i class="far fa-bookmark"></i></div>
                     </div>
                 </div>
@@ -95,6 +102,39 @@
     </div>
 
 </section>
+
+<section class="video" id="video">
+    <div class="max-width">
+        <h2>चलचित्र</h2>
+        <div class="video-list">
+            <iframe src="https://www.youtube.com/embed/tp__HgvnW8A?list=PLOl_wW4Z269X_TsCXj3tsrpNSsBvCwnEq"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/nMOiq_8Z32o?list=PLOl_wW4Z269X_TsCXj3tsrpNSsBvCwnEq"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/yx-TBOIue54?list=PLOl_wW4Z269X_TsCXj3tsrpNSsBvCwnEq"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/LO-z90XLoGI?list=PLOl_wW4Z269X_TsCXj3tsrpNSsBvCwnEq"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/kuq-X4nrYZQ?list=PLOl_wW4Z269X_TsCXj3tsrpNSsBvCwnEq"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/ZZwoibTcBHo?list=PLOl_wW4Z269X_TsCXj3tsrpNSsBvCwnEq"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+</section>
+
 
 <section class="about" id="about">
     <div class="max-width">
