@@ -158,7 +158,6 @@ export class AppComponent implements OnInit {
     import(/*  webpackChunkName:'modal-dialog' */'../app/component/modal-component/modal-component.module').then((_resp) => {
       const compRef = this._resolver.resolveComponentFactory(ModalComponentComponent);
       const nativeElement = this._modalSvc.open('mod1', SocialShareComponent, compRef.componentType);
-
     });
 
   }

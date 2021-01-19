@@ -48,3 +48,9 @@
       transform: none;
     }
   }
+
+  @media screen and (max-width: 320px) {
+    .modal-body{
+      min-width: 288px;
+    }
+  }
