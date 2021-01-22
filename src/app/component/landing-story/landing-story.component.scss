@@ -17,7 +17,7 @@
             width: 300px;
         }
         .landing-info {
-            .buttons{
+            .buttons {
                 display: flex;
             }
             .read {
@@ -245,7 +245,6 @@
 }
 @media screen and (max-width: 900px) {
     .max-width {
-        
         .part-info {
             .container {
                 .part-info-cards {
@@ -286,6 +285,9 @@
                     .read {
                         width: 90%;
                         margin-left: 20px;
+                    }
+                    .title {
+                        width: 100%;
                     }
                 }
             }
@@ -335,6 +337,9 @@
                         width: 90%;
                         margin-left: 20px;
                     }
+                    .title {
+                        width: 100%;
+                    }
                 }
             }
         }
@@ -383,6 +388,9 @@
                         width: 90%;
                         margin-left: 20px;
                     }
+                    .title {
+                        width: 100%;
+                    }
                 }
             }
         }
@@ -419,6 +427,9 @@
                     }
                     .share-icons,
                     .read {
+                        width: 100%;
+                    }
+                    .title {
                         width: 100%;
                     }
                 }

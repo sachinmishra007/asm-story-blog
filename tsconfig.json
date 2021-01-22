@@ -23,6 +23,7 @@
     ]
   },
   "angularCompilerOptions": {
+    "suppressImplicitAnyIndexErrors": false,
     "strictPropertyInitialization": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
