@@ -14,11 +14,18 @@ const routes: Routes = [
     path: 'blogs/:name',
     loadChildren: () => import(/* webpackChunkName:'landing-story-module'*/'../app/component/landing-story/landing-story.module').then((_blogInfo) => _blogInfo.LandingStoryModule),
     pathMatch: 'full'
+  },
+  {
+    path: '**',
+    loadChildren: () => import(/* webpackChunkName:'no-resource-found'*/'../app/component/no-resource-found/no-resource-found.module').then((_noRes) => _noRes.NoResourceModule)
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    anchorScrolling: 'enabled',
+    initialNavigation: 'enabled'
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

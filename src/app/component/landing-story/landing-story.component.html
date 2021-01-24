@@ -1,6 +1,6 @@
 <div class="max-width">
     <div class="landing-card-info">
-        <div class="landing-image-info">
+        <div  attr.data-aos='fade-up' class="landing-image-info">
             <img [src]="mainConfig.blogImage" />
             <div class="landing-info">
                 <div class="title" [innerHTML]="mainConfig.summary">
@@ -61,13 +61,12 @@
         data-ad-layout="in-article"
         data-ad-format="fluid"
         data-ad-client="ca-pub-8686670942479639"
-        data-ad-slot="4557078521">
-    </ins>
+        data-ad-slot="4557078521"></ins>
     </div>
     <div class="part-info" [style.display]="mainConfig.partDescription.length<=0 ? 'none':'block'">
         <h2>अध्याय</h2>
         <div class="container">
-            <div *ngFor="let part of mainConfig.partDescription;let i=index" class="part-info-cards">
+            <div attr.data-aos="{{i%2==0 ? 'fade-right' : 'fade-left'}}" (click)="cardClick(part)" *ngFor="let part of mainConfig.partDescription;let i=index" class="part-info-cards">
                 <div class="chapter-no" [innerHTML]="(i+1)">
                 </div>
                 <div class="title-container" [innerHTML]="part.name">

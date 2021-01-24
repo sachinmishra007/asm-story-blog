@@ -9,7 +9,7 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class LandingStoryComponent implements OnInit, AfterViewInit {
   @Input() mainConfig: any;
-  
+
   constructor(
     private _router: Router,
     private _dataSvc: DataService,
@@ -23,7 +23,12 @@ export class LandingStoryComponent implements OnInit, AfterViewInit {
       const _find: any = this._dataSvc.mainInfoArray.find((_value: any, _key: any) => {
         return _value.summary == _response.params.name;
       });
-      this.mainConfig = _find
+      if (_find != undefined) {
+        this.mainConfig = _find
+      }
+      else{
+        this._router.navigateByUrl('**')
+      }
     })
   }
   shareApplication(appName: string) {
@@ -46,5 +51,9 @@ export class LandingStoryComponent implements OnInit, AfterViewInit {
 
   navigateContent() {
     this._router.navigateByUrl('/read/' + this.mainConfig.defaultRoute);
+  }
+
+  cardClick(part: any) {
+    this._router.navigateByUrl('/read/' + part.partId);
   }
 }

@@ -57,7 +57,7 @@
             width: 70%;
         }
         .main-content {
-            background-image: url("./../../../assets/bg.jpg");
+            background-image: url("./../../../assets/bg1.png");
             background-color: #f4f5db;
             border-radius: 5px;
             margin-top: 20px;
@@ -74,7 +74,7 @@
                 text-align: justify;
                 padding-bottom: 20px;
                 // letter-spacing: 1px;
-                font-size: 20px;
+                font-size: 21px;
             }
             img {
                 width: 100%;
@@ -95,6 +95,11 @@
                 }
                 li:hover {
                     transform: scale(1.1);
+                    font-weight: 700;
+                }
+                .active {
+                    background-color: aliceblue;
+                    padding: 5px;
                     font-weight: 700;
                 }
             }

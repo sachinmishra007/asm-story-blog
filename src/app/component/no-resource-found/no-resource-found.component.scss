@@ -1,0 +1,91 @@
+.no-resource {
+    background-color: #351f39;
+    width: 100%;
+    height: 100vh;
+    .crytext {
+        color: white;
+        padding-left: 50px;
+        padding-top: 50px;
+        font-size: 61px;
+    }
+    .main-page {
+        color: white;
+        border-color: white;
+        border: 1px solid white;
+        /* width: 150px; */
+        /* height: 50px; */
+        margin-left: 57px;
+        text-align: center;
+        padding: 10px;
+        cursor: pointer;
+        width: 22%;
+        margin-top: 32px;
+        font-size: 21px;
+        font-weight: 700;
+        transition: all 0.3s ease;
+    }
+    .main-page:hover {
+        color: black;
+        background-color: white;
+    }
+}
+@media screen and (max-width: 900px) {
+
+    .no-resource {
+        .crytext {
+            font-size: 15px;
+        }
+        .main-page {
+            width: 94%;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    }}
+@media screen and (max-width: 768px) {
+    .no-resource {
+        .crytext {
+            font-size: 15px;
+        }
+        .main-page {
+            width: 94%;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    }
+}
+@media screen and (max-width: 600px) {
+    .no-resource {
+        .crytext {
+            font-size: 15px;
+        }
+        .main-page {
+            width: 94%;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    }
+}
+@media screen and (max-width: 480px) {
+    .no-resource {
+        .crytext {
+            font-size: 15px;
+        }
+        .main-page {
+            width: 94%;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    }
+}
+@media screen and (max-width: 320px) {
+    .no-resource {
+        .crytext {
+            font-size: 15px;
+        }
+        .main-page {
+            width: 94%;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    }
+}

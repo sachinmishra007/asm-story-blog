@@ -64,7 +64,7 @@
     <div class="max-width">
         <h2>कहानियाँ और कविताएँ</h2>
         <div class="blog-contents">
-            <div class="blog-card" (click)="clickToView(item)" *ngFor="let item of storyBlogs;">
+            <div attr.data-aos="{{ i%2==0 ? 'fade-right' : 'fade-left'}}" class="blog-card" (click)="clickToView(item)" *ngFor="let item of storyBlogs;let i=index">
                 <div class="popular" [hidden]="item.isPopular">
                     <i class="fas fa-fire"></i>
                     लोकप्रिय
@@ -139,7 +139,7 @@
 <section class="about" id="about">
     <div class="max-width">
         <h2>परिचय</h2>
-        <div class="about-content">
+        <div data-aos="fade-up" class="about-content">
             <div class="image-info">
                 <img src="../assets/profile.png" />
             </div>

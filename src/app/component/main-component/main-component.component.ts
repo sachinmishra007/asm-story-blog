@@ -1,6 +1,6 @@
 import { Component, ComponentFactoryResolver, HostListener, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 // import {  } from "aos";
-import * as AOS from 'aos';
+// import * as AOS from 'aos';
 
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalComponentComponent } from '../modal-component/modal-component.component';
@@ -46,11 +46,7 @@ export class MainComponentComponent implements OnInit {
     ];
 
 
-    AOS.init({
-      duration: 500,
-      easing: 'ease',
-    });
-
+ 
 
     // import(/*  webpackChunkName:'landing-story-page' */'../app/component/landing-story/landing-story.module').then((resp) => {
     //   const comRef = this._resolver.resolveComponentFactory(LandingStoryComponent);

@@ -16,6 +16,7 @@ import { MainComponentComponent } from './component/main-component/main-componen
 })
 export class AppComponent implements OnInit {
   @ViewChild('content', { static: true, read: ViewContainerRef }) content: ViewContainerRef;
+  title = 'story-blog';
 
   constructor(
     private _router: ActivatedRoute,
@@ -33,8 +34,12 @@ export class AppComponent implements OnInit {
     //   const comRef = this._resolver.resolveComponentFactory(MainComponentComponent);
     //   this.content.createComponent(comRef);
     // })
+    AOS.init({
+      duration: 500,
+      easing: 'ease',
+    });
+
   }
 
-  title = 'story-blog';
 
 }
