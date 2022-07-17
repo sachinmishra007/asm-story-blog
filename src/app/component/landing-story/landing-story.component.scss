@@ -11,7 +11,7 @@
         display: flex;
         background-color: #100e0e;
         border-radius: 5px;
-        border: 1px solid #7d7272;
+        border: 1px solid #742626;
         img {
             padding: 30px;
             width: 300px;
@@ -68,7 +68,8 @@
                         font-size: 25px;
                         background-color: transparent;
                         color: white;
-                        border-color: white;
+                        background-color: #312c51;
+                        
                     }
                 }
             }
@@ -144,7 +145,7 @@
         padding-left: 10px;
         color: blanchedalmond;
         border-radius: 5px;
-        border: 1px solid #7d7272;
+        border: 1px solid #742626;
         h2 {
             margin-top: 15px;
         }
@@ -155,7 +156,7 @@
             .part-info-cards {
                 position: relative;
                 width: 46%;
-                background: #f88f01;
+                background: #FEB139;
                 color: #0e0e0d;
                 margin-top: 10px;
                 margin-bottom: 10px;
@@ -163,6 +164,7 @@
                 border-radius: 5px;
                 margin-left: 20px;
                 margin-right: 20px;
+                border: 1px solid #9fa3be;
                 .chapter-no {
                     position: absolute;
                     left: 0;

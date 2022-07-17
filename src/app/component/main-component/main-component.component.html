@@ -1,21 +1,23 @@
 <nav class="navbar" #navbar>
-    <div class="max-width">
-        <div data-aos="fade-right" class="logo">
-            <a href="#">
-                हस्त<span>लेख.</span>
-            </a>
+    <section id="intro">
+        <div class="max-width">
+            <div data-aos="fade-right" class="logo">
+                <a href="#">
+                    हस्त<span>लेख.</span>
+                </a>
+            </div>
+            <div class="nav-menu">
+                <ul>
+                    <li data-aos="fade-down"><a href="#blogs">कहानियाँ</a></li>
+                    <li data-aos="fade-down"><a href="#video">चलचित्र</a></li>
+                    <li data-aos="fade-down"><a href="#about">परिचय</a></li>
+                </ul>
+            </div>
+            <div (click)="example(element)" class="menu-btn" #element>
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
-        <div class="nav-menu">
-            <ul>
-                <li data-aos="fade-down"><a href="#blogs">कहानियाँ</a></li>
-                <li data-aos="fade-down"><a href="#video">चलचित्र</a></li>
-                <li data-aos="fade-down"><a href="#about">परिचय</a></li>
-            </ul>
-        </div>
-        <div (click)="example(element)" class="menu-btn" #element>
-            <i class="fas fa-bars"></i>
-        </div>
-    </div>
+    </section>
 </nav>
 
 <section class="home" id="home">
@@ -27,7 +29,8 @@
                 <span (click)="clickOnIcon('youtube')"><i class="fab fa-youtube"></i></span>
                 <span (click)="clickOnIcon('')"><i class="fab fa-twitter"></i></span>
                 <span (click)="clickOnIcon('')"><i class="fab fa-facebook-f"></i></span>
-                <span (click)="clickOnIcon('')"><i class="fab fa-instagram"></i></span>
+                <span (click)="clickOnIcon('insta')"><i class="fab fa-instagram"></i></span>
+                <span (click)="clickOnIcon('linkedin')"><i class="fab fa-linkedin"></i></span>
             </div>
             <div class="sub">
                 <div class="subscription-email">
@@ -64,7 +67,8 @@
     <div class="max-width">
         <h2>कहानियाँ और कविताएँ</h2>
         <div class="blog-contents">
-            <div attr.data-aos="{{ i%2==0 ? 'fade-right' : 'fade-left'}}" class="blog-card" (click)="clickToView(item)" *ngFor="let item of storyBlogs;let i=index">
+            <div attr.data-aos="{{ i%2==0 ? 'fade-right' : 'fade-left'}}" class="blog-card" (click)="clickToView(item)"
+                *ngFor="let item of storyBlogs;let i=index">
                 <div class="popular" [hidden]="item.isPopular">
                     <i class="fas fa-fire"></i>
                     लोकप्रिय
@@ -82,7 +86,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="blog-summary" [innerHTML]="item.summary">
+                <div class="blog-summary" [innerHTML]="item.summary" (click)="read(item)">
                 </div>
                 <div class="blog-description" [innerHTML]="item.description" (click)="read(item)">
                 </div>
@@ -92,7 +96,7 @@
                         <div class="author-name" [innerHTML]="item.authorName"> </div>
                     </div>
                     <div class="share-info">
-                        <div class="share" (click)="share()" ><i class="fas fa-share"></i></div>
+                        <div class="share" (click)="share(item)"><i class="fas fa-share"></i></div>
                         <div class="share"><i class="far fa-bookmark"></i></div>
                     </div>
                 </div>
@@ -178,4 +182,3 @@
 </section>
 
 <!-- <ng-template #content></ng-template> -->
- 

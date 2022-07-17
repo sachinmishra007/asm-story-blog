@@ -46,7 +46,7 @@ export class MainComponentComponent implements OnInit {
     ];
 
 
- 
+
 
     // import(/*  webpackChunkName:'landing-story-page' */'../app/component/landing-story/landing-story.module').then((resp) => {
     //   const comRef = this._resolver.resolveComponentFactory(LandingStoryComponent);
@@ -77,6 +77,16 @@ export class MainComponentComponent implements OnInit {
           window.open('https://www.youtube.com/channel/UCrWa0zRS7O8b6C9c_Fwd39A', '_blank')
           return;
         }
+      case 'linkedin':
+        {
+          window.open('https://www.linkedin.com/in/anjali-mishra-097a9222b', '_blank');
+          return;
+        }
+      case 'insta':
+        {
+          window.open('https://www.instagram.com/lovelymadangel/?hl=en', '_blank');
+          return;
+        }
       default: {
         break;
       }
@@ -85,12 +95,14 @@ export class MainComponentComponent implements OnInit {
   clickToView(item: any) {
 
   }
-  share() {
+  share(item: string) {
 
     import(/*  webpackChunkName:'modal-dialog' */'../modal-component/modal-component.module').then((_resp) => {
       const compRef = this._resolver.resolveComponentFactory(ModalComponentComponent);
-       
-      const nativeElement = this._modalSvc.open('mod1', SocialShareComponent, compRef.componentType);
+      const nativeElement = this._modalSvc.open<SocialShareComponent>('mod1', SocialShareComponent, SocialShareComponent);
+      // debugger;
+      // (nativeElement.componentInstance as SocialShareComponent).config = item;
+
     });
 
   }

@@ -109,7 +109,7 @@ export class ContentReadingComponent implements OnInit, AfterViewInit, OnDestroy
     this._cdRef.markForCheck();
   }
   goback() {
-    this.router.navigateByUrl('');
+    this.router.navigateByUrl('/#intro');
   }
   click(e: any, item: any): any {
     this.router.navigateByUrl('read/' + item.partId,);

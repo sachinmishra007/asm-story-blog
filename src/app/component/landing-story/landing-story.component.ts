@@ -26,13 +26,13 @@ export class LandingStoryComponent implements OnInit, AfterViewInit {
       if (_find != undefined) {
         this.mainConfig = _find
       }
-      else{
+      else {
         this._router.navigateByUrl('**')
       }
     })
   }
   shareApplication(appName: string) {
-
+    window.open("whatsapp://send?text=" +window.location.href);
   }
 
   goback() {
